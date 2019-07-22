@@ -1,0 +1,48 @@
+<h2>Добавление / Изменение пользователя</h2>
+<hr>
+
+<div class="col-8 offset-2">
+	<form (ngSubmit)="submitForm(form)" #form="ngForm">
+
+		<!-- 	<div class="form-group" [ngClass]="{'has-error': email.invalid && email.touched}">
+			<label>Логин:</label>
+			<input type="text" class="form-control" ngModel name="login" #login="ngModel" required>
+			<p *ngIf="email.invalid && email.touched">Введите корректный E-mail</p>
+		</div> -->
+
+		<div class="form-group">
+			<label>Логин:</label>
+			<input type="text" [ngClass]="{'has-error': login.invalid && login.touched}" class="form-control" [(ngModel)]="user.login" name="login" #login="ngModel" required>
+			<p class="form-hint" *ngIf="login.invalid && login.touched">Введите Логин</p>
+		</div>
+
+		<div class="form-group">
+			<label>Имя:</label>
+			<input type="text" [ngClass]="{'has-error': name.invalid && name.touched}" class="form-control" [(ngModel)]="user.name" name="name" #name="ngModel" required>
+			<p class="form-hint" *ngIf="name.invalid && name.touched">Введите ваше имя</p>
+		</div>
+
+		<div class="form-group">
+			<label>Телефон:</label>
+			<input type="tel" [ngClass]="{'has-error': phone.invalid && phone.touched}" class="form-control" [(ngModel)]="user.phone" name="phone" #phone="ngModel" required>
+			<p class="form-hint" *ngIf="phone.invalid && phone.touched">Введите номер телефона</p>
+		</div>
+
+		<div class="form-group">
+			<label>Адрес:</label>
+			<input type="text" class="form-control" [(ngModel)]="user.address" name="address" #address="ngModel">
+		</div>
+
+		<!-- 	<div class="form-group">
+			<label>Выберите страну</label>
+			<select class="form-control" ngModel name="country">
+				<option value="ru">Россия</option>
+				<option value="by">Белоруссия</option>
+				<option value="ua">Украина</option>
+			</select>
+		</div> -->
+
+		<button class="btn btn-success" type="submit" [disabled]="!form.valid">Сохранить</button>
+
+	</form>
+</div>

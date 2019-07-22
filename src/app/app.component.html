@@ -1,0 +1,19 @@
+<nav class="navbar navbar-default">
+	<div class="container-fluid container">
+		<ul class="nav navbar-nav">
+			<li class="logo">Logo</li>
+			<li routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}"><a routerLink="/">Главная</a></li>
+			<li routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}"><a routerLink="/users">Пользователи</a></li>
+			<li routerLinkActive="active"><a [routerLink]="['/users', '-1', 'new_user']">Новый пользователь</a></li>
+		</ul>
+	</div>
+</nav>
+
+<div class="container">
+	<div class="row">
+		<div class="col-10 offset-1">
+			<router-outlet></router-outlet>
+		</div>
+	</div>
+
+</div>

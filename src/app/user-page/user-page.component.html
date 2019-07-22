@@ -1,0 +1,20 @@
+<h2>Страница пользователей</h2>
+<hr>
+
+<h3>&lt;ul&gt;</h3>
+<ul class="list-group">
+	<li class="list-group-item"><b>Пользователи</b></li>
+	<li class="list-group-item" *ngFor="let user of users">
+		<a [routerLink]="['/users', user.id, user.login]">{{ user.name }}</a>
+	</li>
+</ul>
+
+<h3>&lt;table&gt;</h3>
+<table>
+	<thead><tr><td><b>Пользователи</b></td></tr></thead>
+	<tbody>
+		<tr *ngFor="let user of users">
+			<td><a [routerLink]="['/users', user.id, user.login]">{{ user.name }}</a></td>
+		</tr>
+	</tbody>
+</table>
